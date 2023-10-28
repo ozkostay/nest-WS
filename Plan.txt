@@ -1,7 +1,9 @@
-Установить nest
-+ @nestjs/websockets
-+ mongo, mongoose
+Установить nest +++
++ mongo, mongoose === npm install --save @nestjs/mongoose mongoose +++
++ .env  @nestjs/config +++
+
 CRUD на книги c mongo
 front React
++ @nestjs/websockets
 коментарии через @nestjs/websockets
 
