@@ -1,0 +1,7 @@
+Установить nest
++ @nestjs/websockets
++ mongo, mongoose
+CRUD на книги c mongo
+front React
+коментарии через @nestjs/websockets
+
