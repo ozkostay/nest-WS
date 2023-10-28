@@ -10,24 +10,21 @@ export class BooksController {
   
   // All
   @Get()
-  finsAll(): string {
+  finsAll(): any {
     return this.booksService.srvFindAll();
   }
 
   // create
   @Post()
   create(@Body() body: CreateBooksDto) {
-    // const body = {
-    //   title: 'Book Nmae 3',
-    //   description: 'Description of Book 3',
-    // }
     return this.booksService.srvCreate(body);
   }
 
   // view
   @Get(':id')
   view(@Param() id: IParamId): any {
-    return this.booksService.srvView(id);
+    
+    return this.booksService.srvView( id );
   }
   // delete
   @Delete(':id')
