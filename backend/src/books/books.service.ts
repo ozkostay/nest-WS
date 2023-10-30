@@ -16,7 +16,7 @@ export class BooksService {
 
     async srvCreate(body: CreateBooksDto): Promise<BookDocument> {
       // console.log('Service Create body: ', body);
-      const book = await this.BookModel.create({...body});
+      const book = await this.BookModel.create(body);
       return book;
     }
 

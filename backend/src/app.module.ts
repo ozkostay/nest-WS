@@ -4,12 +4,13 @@ import { AppController } from './app.controller';
 import { AppService } from './app.service';
 import { BooksModule } from './books/books.module';
 import { MongooseModule } from '@nestjs/mongoose';
+import { AppGateway } from './app/app.gateway';
 
 @Module({
   imports: [BooksModule, 
     ConfigModule.forRoot(),
     MongooseModule.forRoot(process.env.MONGO_CONNECTION)],
   controllers: [AppController],
-  providers: [AppService],
+  providers: [AppService, AppGateway],
 })
 export class AppModule {}
