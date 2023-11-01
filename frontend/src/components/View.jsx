@@ -4,54 +4,56 @@ import { useParams } from "react-router-dom";
 import io from "socket.io-client";
 
 const socket = io.connect("http://localhost:3000");
+const url = `http://localhost:3000/books`;
 
+//===============================
 export default function View() {
   const {id} = useParams();
-  const url = `http://localhost:3000/books/${id}`;
+  
   const [book, setBook] = useState({});
-  const [message, setMessage] = useState('');
+  const [messages, setMessages] = useState([{ name: 'Konst', message: 'Konst message'}]);
 
   //==========================
   useEffect(() => {
     console.log('111');
     const fetchData = async () => {
       try {
-        const result = await fetch(url);
+        const result = await fetch(`${url}/${id}`);
         setBook(await result.json());
       } catch (err) {
         console.error("ERROR", err);
       }
     };
     fetchData();
-  },[]);
+  },[id]); // без id тоже работает
 
+  //===============================
   useEffect(() => {
     console.log('222');
-    socket.on("message", data => {
-      // setState((_state) => [..._state, data]);
-      console.log('on message!!! YESSSS', data);
+    const eventName = "srvMessage";
+    socket.on( eventName, (data) => {
+    console.log('on message!!! YESSSS', data);
+      setMessages([...messages, data]);
     });
     return () => {
-      // BAD: this will remove all listeners for the 'foo' event, which may
-      // include the ones registered in another component
-      socket.off('message');
+      socket.off(eventName);
     }
-  }, [message]);
+  }, [messages]);
 
+  //===============================
   function testSocket(e) {
     e.preventDefault();
     // socket.on('message', (msg) => {
     console.log('emit')  
-    socket.emit('message', 'DDDDDDDDDDDDDD', data => {
-      console.log('5555555', data);
-    });
+    const body= {
+      user: 'Vasia',
+      message: 'message from Vasia'
+    };
+    socket.emit('message', body);
       //const div = templateMessage(msg);
       //dialog.insertAdjacentHTML('beforeend', div);
       //message.value = '';
     // });
-    setMessage('asd');
-    
-    
   }
 
   //============================
@@ -61,7 +63,7 @@ export default function View() {
       <p>-------------</p>
       <h1>Title: {book.title}</h1>
       <h1>Description: {book.description}</h1>
-      <p>message {message}</p>
+      {messages.map((i,index) => <p>{i.message}</p>)}
       <button onClick={testSocket}>test socket</button>
     </>
   );
