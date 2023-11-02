@@ -1,3 +1,4 @@
+import { Injectable } from '@nestjs/common';
 import { MessageBody, SubscribeMessage, WebSocketGateway, WebSocketServer } from '@nestjs/websockets';
 import { Socket, Server } from 'socket.io';
 
@@ -25,7 +26,7 @@ export class AppGateway {
   @SubscribeMessage('message')
   // handleMessage(client: any, payload: any): any {
     onMessage(@MessageBody() body2: any) {
-    console.log('server message!!!', '===', body2);
+    console.log(' На сервер пришло сообщение!!!', '===', body2);
     this.server.emit('srvMessage', body2)
     // return 'Hello world!';
   }

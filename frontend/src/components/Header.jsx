@@ -18,7 +18,7 @@ export default function Header() {
             </li>
             <li className="nav-item">
               <Link className="nav-link" to="/create">
-                Создать
+                Создать книгу
               </Link>
             </li>
             {/* <li className="nav-item">

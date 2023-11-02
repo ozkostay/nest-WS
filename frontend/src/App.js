@@ -5,7 +5,7 @@ import Layout from "./components/Layout";
 import Home from "./components/Home";
 // import Signup from "./components/Signup";
 // import Login from "./components/Login";
-import Create from "./components/create";
+import Create from "./components/Create";
 import View from "./components/View";
 
 function App() {

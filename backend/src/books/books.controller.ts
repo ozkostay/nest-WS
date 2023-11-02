@@ -17,6 +17,7 @@ export class BooksController {
   // create
   @Post()
   create(@Body() body: CreateBooksDto) {
+    console.log('CONTR BOOK', body);
     return this.booksService.srvCreate(body);
   }
 
