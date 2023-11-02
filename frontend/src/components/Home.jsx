@@ -53,7 +53,7 @@ export default function Home() {
   return (
     <>
       <div>
-        <h1>Главная</h1>
+        <h1>Книги</h1>
         {books.map((item, index) => (
           <BooksItem key={item._id} item={item} index={index} deleteItem={deleteItem} view={view}/>
         ))}

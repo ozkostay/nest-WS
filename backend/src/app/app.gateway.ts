@@ -15,6 +15,11 @@ export class AppGateway {
       console.log(socet.id);
       console.log('Connected');
     })
+
+    this.server.off('connection', (socet) => {
+      console.log(socet.id);
+      console.log('DisConnected');
+    })
   }
   
   @SubscribeMessage('message')

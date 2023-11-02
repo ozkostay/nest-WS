@@ -7,3 +7,101 @@ blockquote,q{quotes:none}
 blockquote:before,blockquote:after,q:before,q:after{content:'';content:none}
 table{border-collapse:collapse;border-spacing:0}
 
+h1 {
+  font-size: 20px;
+  font-weight: 700;
+  margin: 10px;
+}
+
+.bb {
+  border: 1px solid black;
+}
+
+.book-items {
+  /* margin: 10px;   */
+  padding: 5px;
+}
+
+.book-line {
+  display: inline-block;
+  padding-right: 10px ;
+  width: 350px;
+  cursor: pointer;
+  font-size: 18px;
+}
+
+.navbar-nav {
+  margin: 10px;
+}
+
+a {
+  color: #0886da;
+  font-size: 18px;
+  font-weight: 700;
+}
+
+a, a:hover, a:visited, a:active {
+  text-decoration: none;
+}
+
+a:hover {
+  cursor: pointer;
+}
+.nav-item {
+  padding: 0 10px 0 0;
+
+}
+
+.wrapper {
+  margin: 10px;
+
+}
+
+.book {
+  padding: 10px;
+  margin: 10px;
+  background-color: #ffa599;
+}
+
+.book-title {
+  font-size: 24px;
+  font-weight: 700;
+  display: block;
+  padding: 10px;
+}
+
+.book-desc {
+  font-size: 20px;
+  font-weight: 200;
+  display: block;
+  padding: 10px;
+}
+
+.comments-form {
+  margin: 10px;
+  
+}
+
+.comments-title {
+  margin: 10px;
+  font-size: 18px;
+  font-weight: 200;
+  display: block;
+  /* padding: 10px; */
+}
+
+.wrap-comment {
+  display: flex;
+  padding: 10px;
+}
+
+.comment {
+  background-color: aquamarine;
+  width: 350px;
+  padding: 10px;
+  font-size: 16px;
+}
+
+.commentDelBtn {
+  width: 40px;
+}
