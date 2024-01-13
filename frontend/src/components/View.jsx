@@ -44,9 +44,9 @@ export default function View() {
     fetchComments();
   }, [id]);
   
-  //===============================
+  //==== Слушаем сообщение сервера ===========================
   useEffect(() => {
-    console.log("333");
+    console.log("333 Слушаем сообщение сервера", id);
     const eventName = "srvMessage";
     socket.on(eventName, (data) => {
       console.log("on message!!! YESSSS", data);
@@ -64,7 +64,8 @@ export default function View() {
   function createComment(e) {
     e.preventDefault();
     // socket.on('message', (msg) => {
-    console.log("emit");
+    console.log("emit ===================================== ", Date.now());
+    
     const newId = Date.now();
     const newComment = {
       id: newId,

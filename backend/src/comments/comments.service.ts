@@ -23,7 +23,7 @@ export class CommentsService {
     }
 
     async srvView(id: IParamId): Promise<CommentDocument[]> {
-      // console.log('Service View id: ', id);
+      console.log('Service View id: ', id);
       const { id: bookId } = id;
       return await this.CommentModel.find({ bookId: bookId});
     }
